@@ -1,0 +1,11 @@
+INSERT INTO diseases (disease_name)
+VALUES 
+    ('Yaws'),
+    ('Polio'),
+    ('Guinea Worm'),
+    ('Rabies'),
+    ('Malaria'),
+    ('HIV'),
+    ('Tuberculosis'),
+    ('Smallpox'),
+    ('Cholera');

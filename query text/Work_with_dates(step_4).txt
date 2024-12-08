@@ -1,0 +1,7 @@
+SELECT 
+    `year` AS original_year,
+    CONCAT(`year`, '-01-01') AS start_of_year,
+    CURDATE() AS 'current_date',
+    TIMESTAMPDIFF(YEAR, CONCAT(`year`, '-01-01'), CURDATE()) AS year_difference
+FROM 
+    cases;

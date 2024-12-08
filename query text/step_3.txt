@@ -1,0 +1,2 @@
+INSERT INTO entity (entity_name, entity_code)
+SELECT DISTINCT Entity, Code FROM infectious_cases;

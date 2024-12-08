@@ -1,0 +1,9 @@
+CREATE TABLE cases (
+    case_id SERIAL PRIMARY KEY,        
+    entity_id INT NOT NULL,              
+    year INT NOT NULL,                 
+    disease_id INT NOT NULL,             
+    number_of_cases INT,                 
+    FOREIGN KEY (entity_id) REFERENCES entity(entity_id),
+    FOREIGN KEY (disease_id) REFERENCES diseases(disease_id)
+);

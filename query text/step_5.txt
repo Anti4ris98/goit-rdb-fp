@@ -1,0 +1,4 @@
+CREATE TABLE diseases (
+    disease_id SERIAL PRIMARY KEY,
+    disease_name VARCHAR(255) UNIQUE NOT NULL
+);

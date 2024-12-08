@@ -1,0 +1,4 @@
+CREATE TABLE entity (
+    entity_id SERIAL PRIMARY KEY,
+    entity_name VARCHAR(255) UNIQUE,
+    entity_code VARCHAR(10) UNIQUE);

@@ -1,0 +1,10 @@
+SELECT 
+    case_id,
+    number_of_cases AS yearly_cases,
+    calculate_average_per_period(`number_of_cases`, 12) AS average_per_month,
+    calculate_average_per_period(`number_of_cases`, 4) AS average_per_quarter,
+    calculate_average_per_period(`number_of_cases`, 2) AS average_per_half_year
+FROM 
+    cases
+WHERE 
+    number_of_cases IS NOT NULL;

@@ -1,0 +1,19 @@
+DELIMITER $$
+
+CREATE FUNCTION calculate_average_per_period(
+    yearly_cases INT,
+    divisor INT
+)
+RETURNS DECIMAL(10, 2)
+DETERMINISTIC
+BEGIN
+    -- Перевірка на те, щоб divisor не дорівнював 0
+    IF divisor = 0 THEN
+        RETURN NULL;
+    END IF;
+    
+    -- Розрахунок середньої кількості випадків
+    RETURN yearly_cases / divisor;
+END$$
+
+DELIMITER ;

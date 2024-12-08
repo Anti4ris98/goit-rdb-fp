@@ -1,0 +1,14 @@
+SELECT 
+    e.entity_name,
+    e.entity_code,
+    AVG(c.number_of_cases) AS avg_rabies,
+    MIN(c.number_of_cases) AS min_rabies,
+    MAX(c.number_of_cases) AS max_rabies,
+    SUM(c.number_of_cases) AS total_rabies
+FROM cases c
+JOIN diseases d ON c.disease_id = d.disease_id
+JOIN entity e ON c.entity_id = e.entity_id
+WHERE d.disease_id = '4' -- ID хвороби
+GROUP BY e.entity_name, e.entity_code
+ORDER BY avg_rabies DESC
+LIMIT 10;

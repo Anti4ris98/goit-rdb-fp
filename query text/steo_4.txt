@@ -1,0 +1,4 @@
+ALTER TABLE infectious_cases  ADD COLUMN entity_id INT;
+UPDATE infectious_cases
+SET entity_id = (SELECT entity_id FROM entity WHERE entity.entity_name = infectious_cases.Entity);
+ALTER TABLE infectious_cases DROP COLUMN Entity, DROP COLUMN Code;
